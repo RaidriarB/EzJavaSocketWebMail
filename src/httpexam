@@ -1,0 +1,10 @@
+GET /socket.io/?EIO=3&transport=polling&t=1575542626177-8059 HTTP/1.1
+Host: ctf.merak.codes
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:70.0) Gecko/20100101 Firefox/70.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Referer: http://ctf.merak.codes/users
+Cookie: __cfduid=d2805811070326eab4ccd32bc5f3f70ca1575169229; session=c7cf85cd-b5c1-45b7-bdef-9f8281f032a6
+

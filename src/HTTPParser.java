@@ -1,0 +1,114 @@
+import java.io.*;
+import java.lang.*;
+import java.net.URLDecoder;
+import java.util.ArrayList;
+
+/**
+ * 解析HTTP协议的类
+ * 使用Parse方法得到HttpObject
+ * 单元测试完毕
+ */
+public class HTTPParser {
+    private HttpObject httpObject;
+
+    /**
+     * 解析Http协议
+     * @param httpstr http协议有很多行，把这些存入一个字符串ArrayList
+     * @return HttpObject对象，这个对象支持了Http的常用子集，包含了Http协议的信息。
+     */
+    public HttpObject Parse(ArrayList<String> httpstr){
+        if(httpstr.isEmpty()){
+            return null;
+        }
+        this.httpObject = new HttpObject();
+
+        try{
+            for(String line : httpstr){
+                if(line.startsWith("GET")){
+                    //解析请求行
+                    ParseMethod(line);
+                }else if(line.startsWith("Cookie:")){
+                    //解析Cookie，存入HashMap
+                    ParseCookie(line);
+                }else{
+                    //解析其他行
+                    ParseString(line);
+                }
+            }
+            return httpObject;
+        }catch (UnsupportedEncodingException e){
+            e.printStackTrace();
+            System.out.println("URL解析出错啦！");
+            return null;
+        }
+    }
+
+    /**
+     * 解析URL请求行，包括动作、url和get方法的参数、协议版本。
+     * @param line 要解析的请求行
+     * @throws UnsupportedEncodingException 遇到了不能解析的URL编码，有可能是恶意攻击
+     */
+    private void ParseMethod(String line)throws UnsupportedEncodingException{
+        String[] strs = new String[3];
+        strs = line.trim().split(" ");
+        this.httpObject.setMethod(strs[0]);
+        this.httpObject.setURL(strs[1].split("\\?",2)[0]);
+        this.httpObject.setProtocol(strs[2]);
+
+        //解析URL中带有的参数
+        String[] params = strs[1].split("\\?",2)[1].split("&");
+        for(String param:params){
+            String paramKey = URLDecoder.decode(param.split("=")[0], "UTF-8");
+            String paramValue = URLDecoder.decode(param.split("=")[1], "UTF-8");
+            this.httpObject.addParam(paramKey,paramValue);
+        }
+    }
+
+    /**
+     * 解析HTTP的其他字段，除去Cookie和请求行
+     * @param line 要解析的行
+     */
+    private void ParseString(String line){
+        if(line.startsWith("Host")){
+            this.httpObject.setHost(
+                    line.replaceAll("Host:", "").trim());
+        }else if (line.startsWith("User-Agent")){
+            this.httpObject.setUA(
+                    line.replaceAll("User-Agent:", "").trim());
+        }else{
+            return;
+        }
+    }
+
+    /**
+     * 解析Cookie到HashMap
+     * @param line 要解析的cookie行
+     * @throws UnsupportedEncodingException 遇到了不能解析的URL编码
+     */
+    private void ParseCookie(String line) throws UnsupportedEncodingException{
+        String[] cookies = line.substring(7).trim().split(";");
+        for(String cookie : cookies){
+            cookie = cookie.trim();
+            String cKey = URLDecoder.decode(cookie.split("=")[0], "UTF-8");
+            String cValue = URLDecoder.decode(cookie.split("=")[1], "UTF-8");
+            this.httpObject.addCookie(cKey, cValue);
+        }
+    }
+
+    public static void main(String[] args) throws IOException{
+
+        //这是一个示例文件，是抓包抓下来的。
+        BufferedReader br = new BufferedReader(new FileReader(new File("src/httpexam")));
+        ArrayList<String> httpstr = new ArrayList<String>();
+        while(true){
+            String str = new String();
+            str = br.readLine();
+            if(str != null){
+                httpstr.add(str);
+            }else break;
+        }
+        //下一步的目的，就是获得这个httpstr的ArrayList。
+        HttpObject myhttp = new HTTPParser().Parse(httpstr);
+        System.out.println(myhttp.toString());
+    }
+}
