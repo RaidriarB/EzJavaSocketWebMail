@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7197a0c3-abf1-4202-ad59-21dec491f97c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaServerTest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/JacaServerTest/EchoServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/JacaServerTest/HTTPParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/JacaServerTest/HTTPServerThread.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/JacaServerTest/HttpObject.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/JacaServerTest/MainServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/JacaServerTest/httpexam" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EchoServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HTTPParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HTTPServerThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HttpObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MainServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/httpexam" afterDir="false" />
-    </list>
+    <list default="true" id="7197a0c3-abf1-4202-ad59-21dec491f97c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -158,7 +139,7 @@
       <option name="presentableId" value="Default" />
       <updated>1575391923031</updated>
       <workItem from="1575391925803" duration="2257000" />
-      <workItem from="1575542649364" duration="5092000" />
+      <workItem from="1575542649364" duration="5369000" />
     </task>
     <servers />
   </component>
