@@ -1,5 +1,9 @@
 # 计算机网络实验2——Socket
 
+##最新进展
+
+2019.12.6,12:09 解决了HTTPParser中GET请求无参数导致数组越界的bug  
+2019.12.6.12:08 找到了协议边界的发现方法，即line为空，而不是回车换行  
 ## 使用方法
 如果你有git的使用经验，直接输入如下命令
 ```bash
@@ -13,4 +17,19 @@ git clone https://github.com/RaidriarB/JavaServerTest.git
 一个简单的Socket实现WebMail的小作业。
   
 目前完成的部分：http解析器、http对象  
-还需完成的部分：ServerSocket，httpConversation，ServerThread，Router，SMTP部分以及网页部分。
+正在处理的部分：httpServerThread  
+还需完成的部分：ServerSocket，httpConversation，Router，SMTP部分以及网页部分。  
+##各部分说明
+
+### 解析器(HTTPParser)
+解析函数原型
+```$xslt
+public HttpObject Parse(ArrayList<String> httpstr)
+```
+httpstr是http协议的多行字串表示。
+
+### HTTPServerThread
+功能1：读取客户端的http流，存入ArrayList
+```$xslt
+ArrayList<String> getHttpRequest(Socket incoming)
+```

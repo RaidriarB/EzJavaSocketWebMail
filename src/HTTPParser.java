@@ -56,12 +56,15 @@ public class HTTPParser {
         this.httpObject.setProtocol(strs[2]);
 
         //解析URL中带有的参数
-        String[] params = strs[1].split("\\?",2)[1].split("&");
-        for(String param:params){
-            String paramKey = URLDecoder.decode(param.split("=")[0], "UTF-8");
-            String paramValue = URLDecoder.decode(param.split("=")[1], "UTF-8");
-            this.httpObject.addParam(paramKey,paramValue);
+        if(strs[1].contains("?")){
+            String[] params = strs[1].split("\\?",2)[1].split("&");
+            for(String param:params){
+                String paramKey = URLDecoder.decode(param.split("=")[0], "UTF-8");
+                String paramValue = URLDecoder.decode(param.split("=")[1], "UTF-8");
+                this.httpObject.addParam(paramKey,paramValue);
+            }
         }
+        //没有参数，什么都不做。
     }
 
     /**

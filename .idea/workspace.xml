@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7197a0c3-abf1-4202-ad59-21dec491f97c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HTTPParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTTPParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HTTPServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTTPServerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +52,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
-  <component name="RunManager" selected="Application.HTTPParser">
+  <component name="RunManager" selected="Application.HTTPServerThread">
     <configuration name="EchoServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="EchoServer" />
       <module name="JavaServerTest" />
@@ -65,10 +67,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HTTPServerThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HTTPServerThread" />
+      <module name="JavaServerTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HTTPParser" />
+        <item itemvalue="Application.HTTPServerThread" />
         <item itemvalue="Application.EchoServer" />
+        <item itemvalue="Application.HTTPParser" />
       </list>
     </recent_temporary>
   </component>
@@ -96,7 +106,8 @@
       <updated>1575391923031</updated>
       <workItem from="1575391925803" duration="2257000" />
       <workItem from="1575542649364" duration="5687000" />
-      <workItem from="1575548427229" duration="467000" />
+      <workItem from="1575548427229" duration="918000" />
+      <workItem from="1575602062066" duration="3359000" />
     </task>
     <servers />
   </component>
@@ -119,33 +130,33 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="393" y="102" key="#toString()_Generation_Settings/0.0.1440.900@0.0.1440.900" timestamp="1575546376866" />
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1575548372149">
+    <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1575605310660">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1575548372149" />
-    <state width="1398" height="244" key="GridCell.Tab.0.center" timestamp="1575548372147">
+    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1575605310660" />
+    <state width="1398" height="244" key="GridCell.Tab.0.center" timestamp="1575605310658">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1575548372147" />
-    <state width="1398" height="244" key="GridCell.Tab.0.left" timestamp="1575548372146">
+    <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1575605310658" />
+    <state width="1398" height="244" key="GridCell.Tab.0.left" timestamp="1575605310657">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1575548372146" />
-    <state width="1398" height="244" key="GridCell.Tab.0.right" timestamp="1575548372148">
+    <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1575605310657" />
+    <state width="1398" height="244" key="GridCell.Tab.0.right" timestamp="1575605310659">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1575548372148" />
+    <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1575605310659" />
     <state x="221" y="89" key="SettingsEditor" timestamp="1575542739297">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1575542739297" />
-    <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1575542650148">
+    <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1575602079509">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="374" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1575542650148" />
-    <state x="385" y="196" width="670" height="158" key="search.everywhere.popup" timestamp="1575547505912">
+    <state x="374" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1575602079509" />
+    <state x="385" y="196" width="670" height="158" key="search.everywhere.popup" timestamp="1575604979680">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="158" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1575547505912" />
+    <state x="385" y="196" width="670" height="158" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1575604979680" />
   </component>
 </project>
