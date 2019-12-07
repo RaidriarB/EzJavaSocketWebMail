@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7197a0c3-abf1-4202-ad59-21dec491f97c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/HTTPRespObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPParser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPServerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HTTPParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTTPParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HTTPServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTTPServerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +109,7 @@
       <workItem from="1575391925803" duration="2257000" />
       <workItem from="1575542649364" duration="5687000" />
       <workItem from="1575548427229" duration="918000" />
-      <workItem from="1575602062066" duration="5366000" />
+      <workItem from="1575602062066" duration="10008000" />
     </task>
     <servers />
   </component>
@@ -122,30 +124,46 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="437" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1575542842580" />
-    <state x="533" y="145" key="#com.intellij.ide.util.MemberChooser" timestamp="1575546377757">
+    <state x="533" y="145" key="#com.intellij.ide.util.MemberChooser" timestamp="1575616189588">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="533" y="145" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1575546377757" />
+    <state x="533" y="145" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1575616189588" />
     <state x="393" y="102" key="#toString()_Generation_Settings" timestamp="1575546376866">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="393" y="102" key="#toString()_Generation_Settings/0.0.1440.900@0.0.1440.900" timestamp="1575546376866" />
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1575608687777">
+    <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1575736329985">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1575608687777" />
-    <state width="1398" height="244" key="GridCell.Tab.0.center" timestamp="1575608687774">
+    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1575736329985" />
+    <state width="1398" height="244" key="GridCell.Tab.0.center" timestamp="1575736329984">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1575608687774" />
-    <state width="1398" height="244" key="GridCell.Tab.0.left" timestamp="1575608687772">
+    <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1575736329984" />
+    <state width="1398" height="244" key="GridCell.Tab.0.left" timestamp="1575736329983">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1575608687772" />
-    <state width="1398" height="244" key="GridCell.Tab.0.right" timestamp="1575608687776">
+    <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1575736329983" />
+    <state width="1398" height="244" key="GridCell.Tab.0.right" timestamp="1575736329985">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1575608687776" />
+    <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1575736329985" />
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1575646448117">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1575646448117" />
+    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1575646448115">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1575646448115" />
+    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1575646448115">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1575646448115" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1575646448116">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1575646448116" />
     <state x="221" y="89" key="SettingsEditor" timestamp="1575542739297">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -158,5 +176,16 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="196" width="670" height="158" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1575604979680" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/HTTPServerThread.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

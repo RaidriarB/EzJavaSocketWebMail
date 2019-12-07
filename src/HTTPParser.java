@@ -44,6 +44,52 @@ public class HTTPParser {
     }
 
     /**
+     * 把HTTPRespObject转换成可以发送的字串
+     * @param respObject 待转换的对象
+     * @return 字串ArrayList
+     */
+    public static ArrayList<String> GenerateRespStr(HTTPRespObject respObject) {
+        ArrayList<String> respStr = new ArrayList<>();
+        String line = "";
+
+        //First line
+        if (respObject.getProtocol() != null) {
+            line += respObject.getProtocol();
+            if (respObject.getStatcode() != 0) {
+                int statcode = respObject.getStatcode();
+                line += " ";
+                if (statcode == 200) {
+                    line += "200 OK";
+                } else if (statcode == 404) {
+                    line += "404 Not Found";
+                }
+                respStr.add(line);
+            }
+        }
+
+        //Server
+        if (respObject.getServer() != null) {
+            line = ("Server: " + respObject.getServer());
+            respStr.add(line);
+        }
+
+        //content_type
+        if (respObject.getContent_Type() != null) {
+            line = ("Content-Type: " + respObject.getContent_Type());
+            respStr.add(line);
+        }
+
+        //body
+        respStr.add("");
+        if (respObject.getBody().size() != 0) {
+            for (String eachLine : respObject.getBody()) {
+                respStr.add(eachLine);
+            }
+        }
+        return respStr;
+    }
+
+    /**
      * 解析URL请求行，包括动作、url和get方法的参数、协议版本。
      * @param line 要解析的请求行
      * @throws UnsupportedEncodingException 遇到了不能解析的URL编码，有可能是恶意攻击
