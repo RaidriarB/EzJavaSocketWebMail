@@ -7,9 +7,12 @@ import java.util.Scanner;
 
 public class HTTPServerThread {
 
+    private static String webRoot = "web";
+
     private boolean haveReq;
     private InetAddress ip;
     private int port;
+
 
     private ArrayList<String> getHttpRequest(Socket incoming,Scanner in){
         ArrayList<String> httpreq = new ArrayList<>();
@@ -49,6 +52,64 @@ public class HTTPServerThread {
 
         return resp;
     }
+
+    private HTTPRespObject getRespFromReq(HttpObject httpObject){
+        try{
+            String path = httpObject.getURL();
+            File retFile;
+            if(path.endsWith("/")){
+                retFile = new File(webRoot+path+"index.html");
+            }else{
+                retFile = new File(webRoot+path);
+            }
+            System.out.println(retFile);
+
+            FileInputStream fin = new FileInputStream(retFile);
+            HTTPRespObject resp = new HTTPRespObject();
+
+            resp.setProtocol("HTTP/1.1");
+            resp.setServer("Raidriar_Test_Server");
+            resp.setStatcode(200);
+            resp.setContent_Type("text/html; charset=UTF-8");
+            resp.setStatString("OK");
+
+            try(Scanner in = new Scanner(fin,"UTF-8")){
+                while(in.hasNextLine()){
+                    resp.addLineToBody(in.nextLine());
+                }
+            }
+            return resp;
+
+        }catch (FileNotFoundException e){
+            System.out.println("请求的资源没有找到");
+            //应当返回404页面
+            HTTPRespObject resp = new HTTPRespObject();
+            resp.setProtocol("HTTP/1.1");
+            resp.setServer("Raidriar_Test_Server");
+            resp.setStatcode(404);
+            resp.setContent_Type("text/html; charset=UTF-8");
+            resp.setStatString("Not Found");
+
+            try(FileInputStream fin = new FileInputStream(
+                    new File(webRoot+"/404.html"))){
+                try(Scanner in = new Scanner(fin,"UTF-8")){
+                    while(in.hasNextLine()){
+                        resp.addLineToBody(in.nextLine());
+                    }
+                }
+                return resp;
+
+            }catch (FileNotFoundException e1){
+                e1.printStackTrace();
+                System.out.println("catch中的404出错了");
+                return null;
+            }catch (IOException e2){
+                e2.printStackTrace();
+                return null;
+            }
+        }
+    }
+
     private void sendHttpResponse(Socket incoming,PrintWriter out,HTTPRespObject resp){
         if(haveReq == false){
             return;
@@ -81,10 +142,11 @@ public class HTTPServerThread {
                 );
 
                 ArrayList<String> httpStr = getHttpRequest(incoming, in);
-
                 HttpObject httpObject = new HTTPParser().Parse(httpStr);
                 HTTPRespObject respObject = new HTTPRespObject();
-                HTTPRespObject resp = getTestResp();
+
+                HTTPRespObject resp = getRespFromReq(httpObject);
+
                 sendHttpResponse(incoming,out,resp);
             }
         }catch (IOException e){
