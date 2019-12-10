@@ -18,8 +18,7 @@ public class HTTPServerThread {
         ArrayList<String> httpreq = new ArrayList<>();
         while (!incoming.isClosed() && in.hasNextLine()) {
             String line = in.nextLine();
-            System.out.println(line);
-            //read Two \r\n to escape
+            //System.out.println(line);
             if (line.isEmpty()) {
                 break;
             }
@@ -28,6 +27,7 @@ public class HTTPServerThread {
         return httpreq;
     }
 
+    /*
     private HTTPRespObject getTestResp(){
         HTTPRespObject resp = new HTTPRespObject();
         resp.setProtocol("HTTP/1.1");
@@ -52,21 +52,31 @@ public class HTTPServerThread {
 
         return resp;
     }
+    */
 
     private HTTPRespObject getRespFromReq(HttpObject httpObject){
         try{
             String path = httpObject.getURL();
             File retFile;
-            if(path.endsWith("/")){
+
+            if(!path.endsWith(".html")){
                 retFile = new File(webRoot+path+"index.html");
+
+            }else if(path == "sendmail"){
+                System.out.println("首先返回一个正在发送的界面");
+                System.out.println("这里是发送邮件的逻辑");
+                System.out.println("这里是根据发送成功与否，进行返回判断的逻辑");
+                System.out.println("接下来返回一个响应页面");
+                retFile = new File(webRoot+"index.html");//暂时先这样
+
             }else{
                 retFile = new File(webRoot+path);
             }
-            System.out.println(retFile);
 
             FileInputStream fin = new FileInputStream(retFile);
             HTTPRespObject resp = new HTTPRespObject();
 
+            System.out.println("请求的资源为:"+retFile.getName());
             resp.setProtocol("HTTP/1.1");
             resp.setServer("Raidriar_Test_Server");
             resp.setStatcode(200);
@@ -80,9 +90,9 @@ public class HTTPServerThread {
             }
             return resp;
 
-        }catch (FileNotFoundException e){
-            System.out.println("请求的资源没有找到");
-            //应当返回404页面
+        }catch (FileNotFoundException e){//应当返回404页面
+
+            System.out.println("请求的资源没有找到,返回404页面");
             HTTPRespObject resp = new HTTPRespObject();
             resp.setProtocol("HTTP/1.1");
             resp.setServer("Raidriar_Test_Server");
@@ -92,6 +102,7 @@ public class HTTPServerThread {
 
             try(FileInputStream fin = new FileInputStream(
                     new File(webRoot+"/404.html"))){
+
                 try(Scanner in = new Scanner(fin,"UTF-8")){
                     while(in.hasNextLine()){
                         resp.addLineToBody(in.nextLine());
@@ -129,7 +140,7 @@ public class HTTPServerThread {
         this.haveReq = true;
         this.ip = incoming.getInetAddress();
         this.port = incoming.getPort();
-        System.out.println(this.ip+":"+this.port);
+        System.out.println("请求的客户端IP为："+this.ip+"，端口是"+this.port);
 
         try {
             InputStream inStream = incoming.getInputStream();
@@ -141,12 +152,11 @@ public class HTTPServerThread {
                         true
                 );
 
+                //核心逻辑
                 ArrayList<String> httpStr = getHttpRequest(incoming, in);
                 HttpObject httpObject = new HTTPParser().Parse(httpStr);
                 HTTPRespObject respObject = new HTTPRespObject();
-
                 HTTPRespObject resp = getRespFromReq(httpObject);
-
                 sendHttpResponse(incoming,out,resp);
             }
         }catch (IOException e){

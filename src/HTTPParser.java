@@ -158,6 +158,6 @@ public class HTTPParser {
         }
         //下一步的目的，就是获得这个httpstr的ArrayList。
         HttpObject myhttp = new HTTPParser().Parse(httpstr);
-        System.out.println(myhttp.toString());
+        //System.out.println(myhttp.toString());
     }
 }

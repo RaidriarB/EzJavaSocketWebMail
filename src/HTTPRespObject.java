@@ -65,7 +65,7 @@ public class HTTPRespObject {
     }
 
     public void addLineToBody(String line) {
-        System.out.println(line);
+        //System.out.println(line);
         this.body.add(line);
     }
 

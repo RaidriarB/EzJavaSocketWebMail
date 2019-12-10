@@ -2,6 +2,7 @@
 
 ##最新进展
 
+2019.12.10.20:10 增加了index.html，准备编写邮件处理逻辑  
 2019.12.10.13:07 完善了http服务器的route功能，并增加了404页面  
 2019.12.6.12:09 解决了HTTPParser中GET请求无参数导致数组越界的bug  
 2019.12.6.12:08 找到了协议边界的发现方法，即line为空，而不是回车换行  
@@ -19,9 +20,9 @@ git clone https://github.com/RaidriarB/JavaServerTest.git
 请web开发人员将网页结构放在web文件夹中。默认目录资源是index.html，不支持基于应用程序服务器的解析功能。  
 
   
-目前完成的部分：http解析器、http对象、http响应对象、httpServerThread  
-正在处理的部分： 
-还需完成的部分：ServerSocket，SMTP部分以及网页部分。  
+目前完成的部分：http解析器、http对象、http响应对象、mainserver  
+正在处理的部分： SMTP部分、HTTPServerThread  
+还需完成的部分：SMTP部分以及网页部分。  
 ##各部分说明
 
 ### 解析器(HTTPParser)

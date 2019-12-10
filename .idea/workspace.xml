@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7197a0c3-abf1-4202-ad59-21dec491f97c" name="Default Changelist" comment="">
+    <list default="true" id="7197a0c3-abf1-4202-ad59-21dec491f97c" name="Default Changelist" comment="增加了让MainServer，使其可以多线程接收request。&#10;准备进行邮件部分的逻辑处理">
+      <change afterPath="$PROJECT_DIR$/out/production/JavaServerTest/HttpThread.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPRespObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPRespObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPServerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/MainServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaServerTest/MainServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HTTPParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTTPParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HTTPRespObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTTPRespObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HTTPServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTTPServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,10 +59,15 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
-  <component name="RunManager" selected="Application.HTTPServerThread">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainServer">
     <configuration name="EchoServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="EchoServer" />
       <module name="JavaServerTest" />
@@ -74,8 +89,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainServer" />
+      <module name="JavaServerTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainServer" />
         <item itemvalue="Application.HTTPServerThread" />
         <item itemvalue="Application.EchoServer" />
         <item itemvalue="Application.HTTPParser" />
@@ -108,7 +131,7 @@
       <workItem from="1575542649364" duration="5687000" />
       <workItem from="1575548427229" duration="918000" />
       <workItem from="1575602062066" duration="10412000" />
-      <workItem from="1575951668331" duration="3010000" />
+      <workItem from="1575951668331" duration="7114000" />
     </task>
     <servers />
   </component>
@@ -130,40 +153,46 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="增加了让MainServer，使其可以多线程接收request。&#10;准备进行邮件部分的逻辑处理" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加了让MainServer，使其可以多线程接收request。&#10;准备进行邮件部分的逻辑处理" />
   </component>
   <component name="WindowStateProjectService">
     <state x="437" y="260" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575951995710">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="437" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1575951995710" />
-    <state x="533" y="145" key="#com.intellij.ide.util.MemberChooser" timestamp="1575616189588">
+    <state x="533" y="145" key="#com.intellij.ide.util.MemberChooser" timestamp="1575955761400">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="533" y="145" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1575616189588" />
+    <state x="533" y="145" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1575955761400" />
     <state x="393" y="102" key="#toString()_Generation_Settings" timestamp="1575546376866">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="393" y="102" key="#toString()_Generation_Settings/0.0.1440.900@0.0.1440.900" timestamp="1575546376866" />
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1575954272386">
+    <state x="301" y="53" key="CommitChangelistDialog2" timestamp="1575980468969">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1575954272386" />
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1575953583912" />
-    <state width="1398" height="244" key="GridCell.Tab.0.center" timestamp="1575954272384">
+    <state x="301" y="53" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1575980468969" />
+    <state width="1398" height="278" key="GridCell.Tab.0.bottom" timestamp="1575980469033">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1575954272384" />
-    <state width="1398" height="244" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1575953583911" />
-    <state width="1398" height="244" key="GridCell.Tab.0.left" timestamp="1575954272383">
+    <state width="1398" height="278" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1575980469033" />
+    <state width="1398" height="278" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1575979058397" />
+    <state width="1398" height="278" key="GridCell.Tab.0.center" timestamp="1575980469032">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1575954272383" />
-    <state width="1398" height="244" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1575953583910" />
-    <state width="1398" height="244" key="GridCell.Tab.0.right" timestamp="1575954272385">
+    <state width="1398" height="278" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1575980469032" />
+    <state width="1398" height="278" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1575979058395" />
+    <state width="1398" height="278" key="GridCell.Tab.0.left" timestamp="1575980469032">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1575954272385" />
-    <state width="1398" height="244" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1575953583912" />
+    <state width="1398" height="278" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1575980469032" />
+    <state width="1398" height="278" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1575979058393" />
+    <state width="1398" height="278" key="GridCell.Tab.0.right" timestamp="1575980469033">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="278" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1575980469033" />
+    <state width="1398" height="278" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1575979058397" />
     <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1575814356140">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -188,9 +217,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="374" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1575951670376" />
-    <state x="385" y="196" width="670" height="158" key="search.everywhere.popup" timestamp="1575604979680">
+    <state x="385" y="196" width="670" height="158" key="search.everywhere.popup" timestamp="1575978804521">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="158" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1575604979680" />
+    <state x="385" y="196" width="670" height="158" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1575978804521" />
   </component>
 </project>
