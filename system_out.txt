@@ -1,0 +1,4 @@
+开始发送一个SMTP消息 {
+HELO smtp.qq.com
+220 smtp.qq.com Esmtp QQ Mail Server
+AUTH LOGIN
