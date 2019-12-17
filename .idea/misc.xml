@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/web/doc" />
+    <option name="OPTION_SCOPE" value="public" />
+    <option name="OPEN_IN_BROWSER" value="false" />
+  </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="13" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>

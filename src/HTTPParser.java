@@ -5,8 +5,7 @@ import java.util.ArrayList;
 
 /**
  * 解析HTTP协议的类
- * 使用Parse方法得到HttpObject
- * 单元测试完毕
+ * Parse方法得到HttpObject
  */
 public class HTTPParser {
     private HttpObject httpObject;
@@ -103,11 +102,14 @@ public class HTTPParser {
 
         //解析URL中带有的参数
         if(strs[1].contains("?")){
-            String[] params = strs[1].split("\\?",2)[1].split("&");
-            for(String param:params){
-                String paramKey = URLDecoder.decode(param.split("=")[0], "UTF-8");
-                String paramValue = URLDecoder.decode(param.split("=")[1], "UTF-8");
-                this.httpObject.addParam(paramKey,paramValue);
+            if(! strs[1].trim().endsWith("?")){
+                String[] params = strs[1].split("\\?",2)[1].split("&");
+                for(String param:params){
+                    String paramKey = URLDecoder.decode(param.split("=")[0], "UTF-8");
+                    String paramValue = URLDecoder.decode(param.split("=")[1], "UTF-8");
+                    //System.out.println("key:"+paramKey+",value:"+paramValue);
+                    this.httpObject.addParam(paramKey,paramValue);
+                }
             }
         }
         //没有参数，什么都不做。

@@ -1,14 +1,72 @@
-import javax.net.SocketFactory;
 import java.io.*;
 import java.net.Socket;
-import java.net.UnknownHostException;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.Scanner;
 
+/**
+ * SMTP的客户端
+ * 功能1：检查邮箱和授权码是否可以登录
+ * 功能2：发送邮件
+ */
 public class SMTPClient {
 
-    public Boolean debug = true;
+    public Boolean debug = false;//如果开启debug，SMTP消息将显示在控制台
+    private Boolean inFile = false;//如果开启inFile，消息将被输出在文件中
+
+    public SMTPClient(Boolean debug){
+        this.debug = debug;
+    }
+
+    public SMTPClient(Boolean debug,Boolean inFile){
+        this(debug);
+        this.inFile = inFile;
+    }
+
+    /**
+     * 检查邮箱与授权码可否登录
+     * @param srv 邮件服务器类型
+     * @param srcmail 邮箱
+     * @param authstr 授权码
+     * @return
+     */
+    public boolean checkLogin(String srv,String srcmail,String authstr){
+        try{
+            Socket smtpSocket = new Socket("smtp.qq.com",25);
+            System.out.println(smtpSocket.getLocalPort());
+
+            InputStream inputStream = smtpSocket.getInputStream();
+            OutputStream outputStream = smtpSocket.getOutputStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            PrintWriter prewritter = new PrintWriter(new OutputStreamWriter(
+                    outputStream,"utf-8"), true);//true很关键
+
+            MyPrintWritter writter = new MyPrintWritter(prewritter,debug,inFile);
+
+            reader.readLine();
+            //HELO
+            writter.println(SMTPFunction.getHELO(srv));
+            reader.readLine();
+            //AUTH LOGIN
+            writter.println("AUTH LOGIN");
+            reader.readLine();
+            writter.println(SMTPFunction.getB64(srcmail));
+            reader.readLine();
+            writter.println(SMTPFunction.getB64(authstr));
+           // System.out.println(reader.readLine());
+
+             String authCode = reader.readLine();
+            if(authCode.contains("235")){
+                System.out.println("Login Checked.");
+                return true;
+            }else{
+                System.out.println(authCode+":login Failed.");
+                return false;
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+            System.out.println("Exception,login Failed.");
+            return false;
+        }
+    }
 
     /**
      * 使用socket发送邮件
@@ -20,106 +78,125 @@ public class SMTPClient {
      * @param data 邮件正文，用ArrayList存储每一行
      * @return 是否发送成功
      */
-    public boolean sendMail(String srv,String srcmail,String dstmail,String authstr,String subject,ArrayList<String> data){
-
+    public boolean sendMail(
+            String srv,String srcmail,String dstmail,
+            String authstr,String subject,ArrayList<String> data){
         try{
             Socket smtpSocket = new Socket("smtp.qq.com",25);
             System.out.println(smtpSocket.getLocalPort());
 
             InputStream inputStream = smtpSocket.getInputStream();
             OutputStream outputStream = smtpSocket.getOutputStream();
-
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            //Scanner reader = new Scanner(inputStream,"utf-8");
-
             PrintWriter prewritter = new PrintWriter(new OutputStreamWriter(
                     outputStream,"utf-8"), true);//true很关键
 
-            MyPrintWritter writter = new MyPrintWritter(prewritter,debug);
-
-            SMTPFunction sf = new SMTPFunction(false);
+            MyPrintWritter writter = new MyPrintWritter(prewritter,debug,inFile);
 
             System.out.println(reader.readLine());
-            //System.out.println("开始发送一个SMTP消息 {");
             //HELO
-            writter.println(sf.getHELO(srv));
+            writter.println(SMTPFunction.getHELO(srv));
             System.out.println(reader.readLine());
+
             //AUTH LOGIN
             writter.println("AUTH LOGIN");
             System.out.println(reader.readLine());
-            writter.println(sf.getB64(srcmail));
+            writter.println(SMTPFunction.getB64(srcmail));
             System.out.println(reader.readLine());
-            writter.println(sf.getB64(authstr));
+            writter.println(SMTPFunction.getB64(authstr));
             System.out.println(reader.readLine());
+
             //mail from rcpt to
-            writter.println(sf.getMailFrom(srcmail));
+            writter.println(SMTPFunction.getMailFrom(srcmail));
             System.out.println(reader.readLine());
-            writter.println(sf.getRcptTo(dstmail));
+            writter.println(SMTPFunction.getRcptTo(dstmail));
             System.out.println(reader.readLine());
+
             //data
             writter.println("DATA");
             System.out.println(reader.readLine());
-            //发送邮件
             writter.println("subject:"+subject);
             writter.println("from:" + srcmail);
             writter.println("to:" + dstmail);
             writter.println("Content-Type: text/plain;charset=\"UTF-8\"");//如果发送正文必须加这个，而且下面要有一个空行
             writter.println("");
-            //发送的正文
             for(String line:data){
                 writter.println(line);
             }
             writter.println(".");//告诉服务器我发送的内容完毕了
+
+            //很关键，如果不加这一行，服务器是接收不到连续<CR><LF>序列的。猜测是服务器线程安全问题
+            Thread.sleep(500);
+
             writter.println("");
             System.out.println(reader.readLine());
-            //
+            //quit
             writter.println("quit");
             System.out.println(reader.readLine());
             return true;
 
         }catch (IOException e){
             e.printStackTrace();
+        }catch (InterruptedException ex){
+            ex.printStackTrace();
         }
         return false;
     }
 
+    /**
+     * 测试模块：检查授权码和邮箱是否可以登录，以及发送邮件。
+     */
     public static void main(String[] args) {
-        String srcmail = "1085455474.com";
+
+        String srcmail = "1085455474@qq.com";
         String srv = "qq";
         String dstmail = "1085455474@qq.com";
-        String authstr = "vadvhalllqxiigie";
+        String authstr = "jypzxfpwwaqofidc";
         String subject = "测试邮件";
         ArrayList<String> data = new ArrayList<>();
         data.add("这是第一行，首次使用java发送邮件成功！");
         data.add("这是第二行");
         data.add("This is Third line.");
 
-        SMTPClient sc = new SMTPClient();
-        Boolean isSuccess = sc.sendMail(srv, srcmail, dstmail, authstr, subject, data);
-        System.out.println(isSuccess);
+        SMTPClient sc = new SMTPClient(true);
+        Boolean checked = sc.checkLogin(srv,srcmail, authstr);
+        if(checked == true){
+            Boolean isSuccess = sc.sendMail(srv, srcmail, dstmail, authstr, subject, data);
+            System.out.println(isSuccess);
+        }
     }
-    /*
-telnet smtp.qq.com 25
-ehlo smtp.qq.com
-AUTH LOGIN
-MTA4NTQ1NTQ3NEBxcS5jb20= 1085455474@qq.com -> b64
-dmFkdmhhbGxscXhpaWdpZQ==  vadvhalllqxiigie -> b64
-MAIL FROM: <1085455474@qq.com>
-Rcpt TO: <test@qq.com>
- */
 }
+
+/**
+ * 由于Windows系统和Linux系统默认的换行命令不一致，为了统一\n和\r\n，封装PrintWriter类。
+ * 目的：Println函数输出<CR><LF>序列。
+ */
 class MyPrintWritter{
     public PrintWriter printWriter;
     private Boolean debug = false;
-    public MyPrintWritter(PrintWriter pr,Boolean debug){
+    private Boolean inFile = false;
+
+    /**
+     * @param pr 封装的输出器
+     * @param debug 调试选项。打开的话，会在控制台输出Print的内容
+     */
+    public MyPrintWritter(PrintWriter pr,Boolean debug,Boolean inFile){
         this.printWriter = pr;
         this.debug = debug;
+        this.inFile = inFile;
     }
 
+    /**
+     * 重新以\r\n方式输出字符串
+     * @param str 输出的字符串
+     */
     public void println(String str){
-
-        printWriter.println(str);
-        if(str == null)return;
+        if(str == null) str="";
+        printWriter.println(str+"\r");
+        //printWriter.print(str+"\r\n");//这样写是不行的
         if(debug == true)System.out.println(str);
+        if(inFile == true){
+            //什么都不做
+        }
     }
 }

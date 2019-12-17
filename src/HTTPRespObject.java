@@ -1,6 +1,8 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 
+/**
+ * HTTP响应抽象成HTTPRespObject。
+ */
 public class HTTPRespObject {
 
     private String Protocol;

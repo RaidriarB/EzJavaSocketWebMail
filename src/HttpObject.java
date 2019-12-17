@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 /**
- * http抽象成HttpObject
+ * http协议抽象成HttpObject
  */
 public class HttpObject {
 

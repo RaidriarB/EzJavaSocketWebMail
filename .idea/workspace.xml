@@ -2,16 +2,93 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7197a0c3-abf1-4202-ad59-21dec491f97c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MailObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SMTPClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SMTPFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SMTPMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sss.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/system_out.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/HTTPParser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/HTTPRespObject.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/HTTPServerThread.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/HttpObject.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/MainServer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/SMTPClient.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/SMTPFunction.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/allclasses-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/allpackages-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/constant-values.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/deprecated-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/element-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/index-files/index-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/index-files/index-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/index-files/index-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/index-files/index-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/index-files/index-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/index-files/index-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/index-files/index-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/index-files/index-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/index-files/index-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/index-files/index-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/member-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/member-search-index.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/package-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/package-search-index.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/resources/glass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/resources/x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/external/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/images/ui-bg_glass_65_dadada_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/images/ui-bg_glass_75_dadada_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/images/ui-icons_222222_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/images/ui-icons_2e83ff_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/images/ui-icons_454545_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/images/ui-icons_888888_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/images/ui-icons_cd0a0a_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/jquery-3.4.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/jquery-ui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/jquery-ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/jquery-ui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/jquery-ui.structure.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/jquery-ui.structure.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/jszip-utils/dist/jszip-utils-ie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/jszip-utils/dist/jszip-utils-ie.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/jszip-utils/dist/jszip-utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/jszip-utils/dist/jszip-utils.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/jszip/dist/jszip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script-dir/jszip/dist/jszip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/type-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doc/type-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/EchoServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPRespObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPRespObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPServerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EchoServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/HttpThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaServerTest/HttpThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/MailObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/MainServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaServerTest/MainServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/MyPrintWritter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaServerTest/MyPrintWritter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/SMTPClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaServerTest/SMTPClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/SMTPFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaServerTest/SMTPFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/SMTPMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/sss.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HTTPParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTTPParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HTTPRespObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTTPRespObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HTTPServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTTPServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HttpObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MailObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SMTPClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SMTPClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SMTPFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SMTPFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SMTPMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sss.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +142,14 @@
       <recent name="$PROJECT_DIR$/web" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SMTPClient">
+  <component name="RunManager" selected="Application.MainServer">
+    <configuration name="HTTPServerThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HTTPServerThread" />
+      <module name="JavaServerTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainServer" />
       <module name="JavaServerTest" />
@@ -75,13 +159,6 @@
     </configuration>
     <configuration name="SMTPClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SMTPClient" />
-      <module name="JavaServerTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SMTPFunction" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SMTPFunction" />
       <module name="JavaServerTest" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -103,11 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainServer" />
         <item itemvalue="Application.SMTPClient" />
+        <item itemvalue="Application.HTTPServerThread" />
         <item itemvalue="Application.sss" />
         <item itemvalue="Application.SMTPMain" />
-        <item itemvalue="Application.SMTPFunction" />
-        <item itemvalue="Application.MainServer" />
       </list>
     </recent_temporary>
   </component>
@@ -138,7 +215,8 @@
       <workItem from="1575548427229" duration="918000" />
       <workItem from="1575602062066" duration="10412000" />
       <workItem from="1575951668331" duration="8546000" />
-      <workItem from="1576393394796" duration="10027000" />
+      <workItem from="1576393394796" duration="10241000" />
+      <workItem from="1576582595094" duration="10846000" />
     </task>
     <task id="LOCAL-00001" summary="增加了让MainServer，使其可以多线程接收request。&#10;取消了getTestResp&#10;准备进行邮件部分的逻辑处理">
       <created>1575980580921</created>
@@ -147,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575980580921</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="增加了SMTP处理部分&#10;目前SMTP还需要完善">
+      <created>1576452228888</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1576452228888</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +255,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="增加了让MainServer，使其可以多线程接收request。&#10;准备进行邮件部分的逻辑处理" />
     <MESSAGE value="增加了让MainServer，使其可以多线程接收request。&#10;取消了getTestResp&#10;准备进行邮件部分的逻辑处理" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加了让MainServer，使其可以多线程接收request。&#10;取消了getTestResp&#10;准备进行邮件部分的逻辑处理" />
+    <MESSAGE value="增加了SMTP处理部分&#10;目前SMTP还需要完善" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加了SMTP处理部分&#10;目前SMTP还需要完善" />
   </component>
   <component name="WindowStateProjectService">
     <state x="437" y="260" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575951995710">
@@ -185,61 +271,71 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="393" y="102" key="#toString()_Generation_Settings/0.0.1440.900@0.0.1440.900" timestamp="1575546376866" />
-    <state x="301" y="53" key="CommitChangelistDialog2" timestamp="1575980580540">
+    <state x="461" y="151" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1576599446290">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="301" y="53" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1575980580540" />
+    <state x="461" y="151" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1576599446290" />
+    <state x="461" y="159" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1440.810@0.23.1440.810" timestamp="1576598471836" />
+    <state x="301" y="53" key="CommitChangelistDialog2" timestamp="1576452228494">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="301" y="53" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1576452228494" />
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1575980695469">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.23.1440.810@0.23.1440.810" timestamp="1575980695469" />
-    <state width="1398" height="236" key="GridCell.Tab.0.bottom" timestamp="1576452180171">
+    <state width="1398" height="218" key="GridCell.Tab.0.bottom" timestamp="1576599724601">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="236" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1576452180171" />
-    <state width="1398" height="278" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1575979058397" />
-    <state width="1398" height="236" key="GridCell.Tab.0.center" timestamp="1576452180170">
+    <state width="1398" height="218" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1576599724601" />
+    <state width="1398" height="218" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1576598473445" />
+    <state width="1398" height="218" key="GridCell.Tab.0.center" timestamp="1576599724598">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="236" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1576452180170" />
-    <state width="1398" height="278" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1575979058395" />
-    <state width="1398" height="236" key="GridCell.Tab.0.left" timestamp="1576452180169">
+    <state width="1398" height="218" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1576599724598" />
+    <state width="1398" height="218" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1576598473444" />
+    <state width="1398" height="218" key="GridCell.Tab.0.left" timestamp="1576599724596">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="236" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1576452180169" />
-    <state width="1398" height="278" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1575979058393" />
-    <state width="1398" height="236" key="GridCell.Tab.0.right" timestamp="1576452180170">
+    <state width="1398" height="218" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1576599724596" />
+    <state width="1398" height="218" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1576598473444" />
+    <state width="1398" height="218" key="GridCell.Tab.0.right" timestamp="1576599724599">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="236" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1576452180170" />
-    <state width="1398" height="278" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1575979058397" />
-    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1576403602707">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="218" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1576599724599" />
+    <state width="1398" height="218" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1576598473444" />
+    <state width="1398" height="258" key="GridCell.Tab.1.bottom" timestamp="1576594151254">
+      <screen x="0" y="23" width="1440" height="810" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1576403602707" />
-    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1576403602706">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1576584024929" />
+    <state width="1398" height="258" key="GridCell.Tab.1.bottom/0.23.1440.810@0.23.1440.810" timestamp="1576594151254" />
+    <state width="1398" height="258" key="GridCell.Tab.1.center" timestamp="1576594151252">
+      <screen x="0" y="23" width="1440" height="810" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1576403602706" />
-    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1576403602705">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1576584024928" />
+    <state width="1398" height="258" key="GridCell.Tab.1.center/0.23.1440.810@0.23.1440.810" timestamp="1576594151252" />
+    <state width="1398" height="258" key="GridCell.Tab.1.left" timestamp="1576594151251">
+      <screen x="0" y="23" width="1440" height="810" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1576403602705" />
-    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1576403602707">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1576584024927" />
+    <state width="1398" height="258" key="GridCell.Tab.1.left/0.23.1440.810@0.23.1440.810" timestamp="1576594151251" />
+    <state width="1398" height="258" key="GridCell.Tab.1.right" timestamp="1576594151253">
+      <screen x="0" y="23" width="1440" height="810" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1576403602707" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1576584024928" />
+    <state width="1398" height="258" key="GridCell.Tab.1.right/0.23.1440.810@0.23.1440.810" timestamp="1576594151253" />
     <state x="221" y="89" key="SettingsEditor" timestamp="1575542739297">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1575542739297" />
-    <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1576393406343">
+    <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1576582598022">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="374" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1576393406343" />
-    <state x="385" y="196" width="670" height="158" key="search.everywhere.popup" timestamp="1575978804521">
+    <state x="374" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1576582598022" />
+    <state x="385" y="196" width="670" height="158" key="search.everywhere.popup" timestamp="1576599419387">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="158" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1575978804521" />
+    <state x="385" y="196" width="670" height="158" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1576599419387" />
+    <state x="385" y="199" width="670" height="158" key="search.everywhere.popup/0.23.1440.810@0.23.1440.810" timestamp="1576598450535" />
   </component>
 </project>
