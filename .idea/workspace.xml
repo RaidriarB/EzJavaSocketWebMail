@@ -109,6 +109,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="raidriarb &lt;raidriarb@foxmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IgnoredFileRootStore">
@@ -276,10 +281,10 @@
     </state>
     <state x="461" y="151" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1576599446290" />
     <state x="461" y="159" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1440.810@0.23.1440.810" timestamp="1576598471836" />
-    <state x="301" y="53" key="CommitChangelistDialog2" timestamp="1576452228494">
+    <state x="301" y="53" key="CommitChangelistDialog2" timestamp="1576599838574">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="301" y="53" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1576452228494" />
+    <state x="301" y="53" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1576599838574" />
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1575980695469">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
