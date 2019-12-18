@@ -130,7 +130,7 @@ public class SMTPClient {
             writter.println(".");//告诉服务器我发送的内容完毕了
 
             //很关键，如果不加这一行，服务器是接收不到连续<CR><LF>序列的。猜测是服务器线程安全问题
-            Thread.sleep(500);
+            Thread.sleep(200);
 
             writter.println("");
             String sendLine = reader.readLine();

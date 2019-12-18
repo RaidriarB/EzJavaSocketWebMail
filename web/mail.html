@@ -224,8 +224,9 @@
     <div class="container">
         <h1>登录成功！</h1>
         <h2 id="hello" style="color: #ffd51b;text-align: center"></h2>
+        <h1>支持群发功能，但不是多线程，所以请不要一次性发太多</h1>
         <form method="get" action="sendMail">
-            <input type="text" name="dst" placeholder="收件人"/>
+            <input type="text" name="dst" style="width: 800px" placeholder="收件人,支持群发，使用分号间隔"/>
             <input type="text" name="subj" placeholder="主题" />
             <textarea id="txt" name="data" placeholder="正文" style="resize:none; height: 400px;width: 800px"></textarea>
             <input type="submit" value="发送邮件" onclick="sendSuccess"/>

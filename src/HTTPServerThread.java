@@ -75,11 +75,13 @@ public class HTTPServerThread {
             else if(path.equals("/sendMail")){
 
                 System.out.println("进行发送邮件逻辑");
-
                 try{
                     String srcmail = cookies.get("email");
                     String srv = SMTPFunction.getSrv(srcmail);
-                    String dstmail = params.get("dst");
+                    String dstmails = params.get("dst");
+                    String[] emails = dstmails.split(";");
+
+                    System.out.println(emails);
                     String authstr = cookies.get("pwd");
                     String subject = params.get("subj");
                     ArrayList<String> data = new ArrayList<>();
@@ -88,8 +90,15 @@ public class HTTPServerThread {
                     for(String line : dataStr.split("\n")){
                         data.add(line);
                     }
-                    SMTPClient sc = new SMTPClient(true);
-                    Boolean isSuccess = sc.sendMail(srv, srcmail, dstmail, authstr, subject, data);
+                    Boolean isSuccess = true;
+
+                    for(String dstmail:emails){
+                        SMTPClient sc = new SMTPClient(true);
+                        if(sc.sendMail(srv, srcmail, dstmail, authstr, subject, data) != true){
+                            isSuccess = false;
+                        }
+                    }
+
                     if(isSuccess == true){
                         retFile = new File(webRoot+sendMailSuccessPage);
                     }else{
