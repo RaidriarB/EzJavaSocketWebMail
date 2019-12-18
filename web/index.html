@@ -30,25 +30,65 @@
             font-size: 36px
         }
     </style>
+    <style type="text/css">
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 20px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '»';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+    </style>
     <meta charset="UTF-8">
 </head>
 <div style="padding: 24px 48px;">
     <h1>:)</h1>
     <p>欢迎来到 <b>Raidriar</b>的服务器！</p>
     <p>如果你看到这个页面，说明服务器还在正常工作..</p>
+    <button class="button" style="horiz-align: center" onclick="redirect()"><span>邮箱功能</span></button>
 </div>
 <div style="padding: 30px 20px">
     你的名字是？<input id="name" type="text">
     <button onclick="update()">确认</button>
-    <p id="text">未命名</p>
-    <form method="get" name="test" action="index.html" onsubmit="getTip()">
-        <textarea id="txt" name="tip" style="resize:none; height: 300px;width: 500px"></textarea>
-        <input type="submit" value="提交">
-    </form>
+    <p id="text"></p>
 </div>
 
 <script>
-
+    function redirect() {
+        window.location = "login.html";
+    }
     function update(){
         var name;
         name = document.getElementById("name").value;
@@ -59,10 +99,6 @@
         tip = document.forms["test"]["tip"].value;
         alert(tip);
     }
-    function getStr(){
-
-    }
-
 </script>
 </html>
 

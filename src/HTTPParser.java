@@ -1,6 +1,7 @@
 import java.io.*;
 import java.lang.*;
 import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 /**
@@ -105,8 +106,13 @@ public class HTTPParser {
             if(! strs[1].trim().endsWith("?")){
                 String[] params = strs[1].split("\\?",2)[1].split("&");
                 for(String param:params){
-                    String paramKey = URLDecoder.decode(param.split("=")[0], "UTF-8");
-                    String paramValue = URLDecoder.decode(param.split("=")[1], "UTF-8");
+                    String paramKey = URLDecoder.decode(param.split("=")[0], StandardCharsets.UTF_8);
+                    String paramValue;
+                    try{
+                        paramValue = URLDecoder.decode(param.split("=")[1], StandardCharsets.UTF_8);
+                    }catch (ArrayIndexOutOfBoundsException e){
+                        paramValue = "";
+                    }
                     //System.out.println("key:"+paramKey+",value:"+paramValue);
                     this.httpObject.addParam(paramKey,paramValue);
                 }
@@ -140,8 +146,8 @@ public class HTTPParser {
         String[] cookies = line.substring(7).trim().split(";");
         for(String cookie : cookies){
             cookie = cookie.trim();
-            String cKey = URLDecoder.decode(cookie.split("=")[0], "UTF-8");
-            String cValue = URLDecoder.decode(cookie.split("=")[1], "UTF-8");
+            String cKey = URLDecoder.decode(cookie.split("=")[0], StandardCharsets.UTF_8);
+            String cValue = URLDecoder.decode(cookie.split("=")[1], StandardCharsets.UTF_8);
             this.httpObject.addCookie(cKey, cValue);
         }
     }
@@ -152,7 +158,7 @@ public class HTTPParser {
         BufferedReader br = new BufferedReader(new FileReader(new File("src/httpexam")));
         ArrayList<String> httpstr = new ArrayList<String>();
         while(true){
-            String str = new String();
+            String str = "";
             str = br.readLine();
             if(str != null){
                 httpstr.add(str);

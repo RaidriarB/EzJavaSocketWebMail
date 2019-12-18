@@ -2,6 +2,8 @@ import java.io.*;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -11,7 +13,19 @@ import java.util.Scanner;
  */
 public class HTTPServerThread {
 
-    private static String webRoot = "web";
+
+    /**
+     * 网页的常量定义
+     */
+    private static final String webRoot = "web";
+    private static final String indexPage = "/index.html";
+    private static final String loginFailPage = "/fail.html";
+    private static final String sendMailPage = "/mail.html";
+    private static final String sendMailFailPage = "/sendFail.html";
+    private static final String sendMailSuccessPage = "/success.html";
+
+    private static final Boolean debug = true;
+    private static final Boolean infile = false;
 
     private boolean haveReq;
     private InetAddress ip;
@@ -47,32 +61,68 @@ public class HTTPServerThread {
     private HTTPRespObject getRespFromReq(HttpObject httpObject){
         try{
             String path = httpObject.getURL();
+            System.out.println("path="+path);
             HashMap<String,String> params = httpObject.getParams();
+            System.out.println("params:"+params);
             HashMap<String,String> cookies = httpObject.getCookies();
             File retFile;
 
             //核心逻辑
-            if(!path.endsWith(".html")){
-                retFile = new File(webRoot+path+"index.html");
-            }else if(path == "sendMail"){
-                String srcmail = cookies.get("email");
-                String srv = SMTPFunction.getSrv(srcmail);
-                String dstmail = params.get("dst");
-                String authstr = cookies.get("pwd");
-                String subject = params.get("subj");
-                ArrayList<String> data = new ArrayList<>();
-                String dataStr = params.get("data");
+            //equals 和 == 的区别很重要！
+            if(path.equals("") || path.equals("/")){
+                retFile = new File(webRoot+indexPage);
+            }
+            else if(path.equals("/sendMail")){
 
-                for(String line : dataStr.split("\n")){
-                    data.add(line);
+                System.out.println("进行发送邮件逻辑");
+
+                try{
+                    String srcmail = cookies.get("email");
+                    String srv = SMTPFunction.getSrv(srcmail);
+                    String dstmail = params.get("dst");
+                    String authstr = cookies.get("pwd");
+                    String subject = params.get("subj");
+                    ArrayList<String> data = new ArrayList<>();
+                    String dataStr = params.get("data");
+
+                    for(String line : dataStr.split("\n")){
+                        data.add(line);
+                    }
+                    SMTPClient sc = new SMTPClient(true);
+                    Boolean isSuccess = sc.sendMail(srv, srcmail, dstmail, authstr, subject, data);
+                    if(isSuccess == true){
+                        retFile = new File(webRoot+sendMailSuccessPage);
+                    }else{
+                        retFile = new File(webRoot+sendMailFailPage);
+                    }
+                }catch (Exception e){
+                    System.out.println("参数没有正确赋值");
+                    retFile = new File(webRoot+sendMailFailPage);
+                    e.printStackTrace();
                 }
-                SMTPClient sc = new SMTPClient(true);
-                Boolean isSuccess = sc.sendMail(srv, srcmail, dstmail, authstr, subject, data);
-                System.out.println(isSuccess);
-                retFile = new File(webRoot+"index.html");
+            }
+            else if(path.equals("/checkLogin")) {
 
-            }else if(path == "checkLogin") {
-                retFile = new File(webRoot+"index.html");
+                System.out.println("进行检查登录逻辑");
+                try{
+                    String srcmail = params.get("email");
+                    String pwd = params.get("pwd");
+                    String srv = SMTPFunction.getSrv(srcmail);
+
+                    SMTPClient smtpClient = new SMTPClient(true,false);
+
+                    if(smtpClient.checkLogin(srv,srcmail,pwd) == true){
+                        System.out.println("验证邮箱密码成功！");
+                        retFile = new File(webRoot+sendMailPage);
+                    }else{
+                        System.out.println("验证失败！");
+                        retFile = new File(webRoot+loginFailPage);
+                    }
+
+                }catch (NullPointerException e){
+                    System.out.println("参数没有正确赋值");
+                    retFile = new File(webRoot+loginFailPage);
+                }
 
             }else{
                 retFile = new File(webRoot + path);
@@ -90,7 +140,7 @@ public class HTTPServerThread {
             resp.setStatString("OK");
 
             //把HTML文件传入Resp的对象
-            try(Scanner in = new Scanner(fin,"UTF-8")){
+            try(Scanner in = new Scanner(fin, StandardCharsets.UTF_8)){
                 while(in.hasNextLine()){
                     resp.addLineToBody(in.nextLine());
                 }
@@ -107,11 +157,12 @@ public class HTTPServerThread {
             resp.setStatcode(404);
             resp.setContent_Type("text/html; charset=UTF-8");
             resp.setStatString("Not Found");
+            e.printStackTrace();
 
             try(FileInputStream fin = new FileInputStream(
                     new File(webRoot+"/404.html"))){
 
-                try(Scanner in = new Scanner(fin,"UTF-8")){
+                try(Scanner in = new Scanner(fin, StandardCharsets.UTF_8)){
                     while(in.hasNextLine()){
                         resp.addLineToBody(in.nextLine());
                     }
@@ -164,9 +215,9 @@ public class HTTPServerThread {
             InputStream inStream = incoming.getInputStream();
             OutputStream outStream = incoming.getOutputStream();
 
-            try (Scanner in = new Scanner(inStream, "UTF-8")) {
+            try (Scanner in = new Scanner(inStream, StandardCharsets.UTF_8)) {
                 PrintWriter out = new PrintWriter(
-                        new OutputStreamWriter(outStream, "UTF-8"),
+                        new OutputStreamWriter(outStream, StandardCharsets.UTF_8),
                         true
                 );
 

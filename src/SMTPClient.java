@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 /**
@@ -8,6 +9,8 @@ import java.util.ArrayList;
  * 功能2：发送邮件
  */
 public class SMTPClient {
+
+    private static final int timeOut = 1500;
 
     public Boolean debug = false;//如果开启debug，SMTP消息将显示在控制台
     private Boolean inFile = false;//如果开启inFile，消息将被输出在文件中
@@ -31,13 +34,14 @@ public class SMTPClient {
     public boolean checkLogin(String srv,String srcmail,String authstr){
         try{
             Socket smtpSocket = new Socket("smtp.qq.com",25);
+            smtpSocket.setSoTimeout(timeOut);
             System.out.println(smtpSocket.getLocalPort());
 
             InputStream inputStream = smtpSocket.getInputStream();
             OutputStream outputStream = smtpSocket.getOutputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
             PrintWriter prewritter = new PrintWriter(new OutputStreamWriter(
-                    outputStream,"utf-8"), true);//true很关键
+                    outputStream, StandardCharsets.UTF_8), true);//true很关键
 
             MyPrintWritter writter = new MyPrintWritter(prewritter,debug,inFile);
 
@@ -89,7 +93,7 @@ public class SMTPClient {
             OutputStream outputStream = smtpSocket.getOutputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
             PrintWriter prewritter = new PrintWriter(new OutputStreamWriter(
-                    outputStream,"utf-8"), true);//true很关键
+                    outputStream, StandardCharsets.UTF_8), true);//true很关键
 
             MyPrintWritter writter = new MyPrintWritter(prewritter,debug,inFile);
 
@@ -129,18 +133,24 @@ public class SMTPClient {
             Thread.sleep(500);
 
             writter.println("");
-            System.out.println(reader.readLine());
+            String sendLine = reader.readLine();
+            System.out.println(sendLine);
             //quit
             writter.println("quit");
-            System.out.println(reader.readLine());
-            return true;
+            String endLine = reader.readLine();
+            System.out.println(endLine);
 
+            if(sendLine.contains("250 Ok")){
+                return true;
+            }
+            return false;
         }catch (IOException e){
             e.printStackTrace();
+            return false;
         }catch (InterruptedException ex){
             ex.printStackTrace();
+            return false;
         }
-        return false;
     }
 
     /**
