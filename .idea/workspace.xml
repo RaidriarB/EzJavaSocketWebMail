@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7197a0c3-abf1-4202-ad59-21dec491f97c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaServerTest/HTTPServerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HTTPServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTTPServerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SMTPClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SMTPClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system_out.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/mail.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/mail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/sendFail.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/sendFail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +144,7 @@
       <workItem from="1576582595094" duration="11292000" />
       <workItem from="1576647423514" duration="7509000" />
       <workItem from="1576655809536" duration="4625000" />
-      <workItem from="1576674629078" duration="844000" />
+      <workItem from="1576674629078" duration="2231000" />
     </task>
     <task id="LOCAL-00001" summary="增加了让MainServer，使其可以多线程接收request。&#10;取消了getTestResp&#10;准备进行邮件部分的逻辑处理">
       <created>1575980580921</created>
@@ -181,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576654963282</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="增加了群发功能">
+      <created>1576675529663</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1576675529665</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +215,8 @@
     <MESSAGE value="服务器基本搭建完毕&#10;现在还差log部分和前端部分" />
     <MESSAGE value="删除了没用的JavaDoc" />
     <MESSAGE value="增加了网页" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加了网页" />
+    <MESSAGE value="增加了群发功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加了群发功能" />
   </component>
   <component name="WindowStateProjectService">
     <state x="437" y="260" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575951995710">
@@ -228,35 +236,35 @@
     </state>
     <state x="461" y="151" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1576661275734" />
     <state x="461" y="159" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1440.810@0.23.1440.810" timestamp="1576598471836" />
-    <state x="301" y="53" key="CommitChangelistDialog2" timestamp="1576654962943">
+    <state x="301" y="53" key="CommitChangelistDialog2" timestamp="1576675529325">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="301" y="53" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1576654962943" />
+    <state x="301" y="53" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1576675529325" />
     <state x="100" y="86" width="1240" height="778" key="DiffContextDialog" timestamp="1576666710894">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="100" y="86" width="1240" height="778" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1576666710894" />
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.23.1440.810@0.23.1440.810" timestamp="1575980695469" />
-    <state width="699" height="200" key="GridCell.Tab.0.bottom" timestamp="1576675509172">
+    <state width="1398" height="200" key="GridCell.Tab.0.bottom" timestamp="1576676919925">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="699" height="200" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1576675509172" />
-    <state width="1398" height="200" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1576675300525" />
-    <state width="699" height="200" key="GridCell.Tab.0.center" timestamp="1576675509171">
+    <state width="1398" height="200" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1576676919925" />
+    <state width="1398" height="200" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1576676563664" />
+    <state width="1398" height="200" key="GridCell.Tab.0.center" timestamp="1576676919923">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="699" height="200" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1576675509171" />
-    <state width="1398" height="200" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1576675300523" />
-    <state width="699" height="200" key="GridCell.Tab.0.left" timestamp="1576675509170">
+    <state width="1398" height="200" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1576676919923" />
+    <state width="1398" height="200" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1576676563659" />
+    <state width="1398" height="200" key="GridCell.Tab.0.left" timestamp="1576676919922">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="699" height="200" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1576675509170" />
-    <state width="1398" height="200" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1576675300522" />
-    <state width="699" height="200" key="GridCell.Tab.0.right" timestamp="1576675509171">
+    <state width="1398" height="200" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1576676919922" />
+    <state width="1398" height="200" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1576676563656" />
+    <state width="1398" height="200" key="GridCell.Tab.0.right" timestamp="1576676919924">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="699" height="200" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1576675509171" />
-    <state width="1398" height="200" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1576675300524" />
+    <state width="1398" height="200" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1576676919924" />
+    <state width="1398" height="200" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1576676563660" />
     <state width="1398" height="258" key="GridCell.Tab.1.bottom" timestamp="1576600174000">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
