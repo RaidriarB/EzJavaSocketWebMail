@@ -33,7 +33,7 @@ public class SMTPClient {
      */
     public boolean checkLogin(String srv,String srcmail,String authstr){
         try{
-            Socket smtpSocket = new Socket("smtp.qq.com",25);
+            Socket smtpSocket = new Socket(SMTPFunction.getStrFromSrv(srv),25);
             smtpSocket.setSoTimeout(timeOut);
             System.out.println(smtpSocket.getLocalPort());
 
@@ -86,7 +86,7 @@ public class SMTPClient {
             String srv,String srcmail,String dstmail,
             String authstr,String subject,ArrayList<String> data){
         try{
-            Socket smtpSocket = new Socket("smtp.qq.com",25);
+            Socket smtpSocket = new Socket(SMTPFunction.getStrFromSrv(srv),25);
             System.out.println(smtpSocket.getLocalPort());
 
             InputStream inputStream = smtpSocket.getInputStream();
@@ -204,8 +204,13 @@ class MyPrintWritter{
      */
     public void println(String str){
         if(str == null) str="";
-        printWriter.println(str+"\r");
+        if(System.lineSeparator().equals("\n")){
+            printWriter.println(str+"\r");
+        }else{
+            printWriter.println(str);
+        }
         //printWriter.print(str+"\r\n");//这样写是不行的
+        //ip改变了，不知道为什么
         if(debug == true)System.out.println(str);
         if(inFile == true){
             //什么都不做

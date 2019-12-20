@@ -18,6 +18,11 @@ public class SMTPFunction {
 
         return null;
     }
+    public static String getStrFromSrv(String srv){
+        if(srv.equals("qq"))return qqMailServer;
+        if(srv.equals("163"))return nc163MailServer;
+        return null;
+    }
 
     /**
      * 字符串转换成base64
@@ -38,8 +43,9 @@ public class SMTPFunction {
      */
     public static String getHELO(String srv){
         String nstr = null;
-        if(srv == "qq")nstr = "helo " + qqMailServer;
-        if(srv == "163")nstr = "helo "+ nc163MailServer;
+        nstr = "helo "+getStrFromSrv(srv);
+//        if(srv == "qq")nstr = "helo " + qqMailServer;
+//        if(srv == "163")nstr = "helo "+ nc163MailServer;
         return nstr;
     }
 
