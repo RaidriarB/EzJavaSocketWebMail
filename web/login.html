@@ -216,10 +216,18 @@
 <div class="wrap">
     <div class="container">
         <h1>LOGIN</h1>
-        <form method="get" action="checkLogin">
-            <input type="text" name="email" placeholder="您的邮箱"/>
-            <input type="password" name="pwd" placeholder="授权码（注意，不是邮箱密码！）" />
-            <input type="submit" value="登录邮箱"/>
+        <form name="form1" method="get" action="checkLogin">
+            <input type="text" id="email" name="email" placeholder="您的邮箱"/>
+            <input type="password" id="pwd" name="pwd" placeholder="授权码（注意，不是邮箱密码！）" />
+            <input type="submit" value="登录邮箱" onclick="setCookie()"/>
+            <script>
+                function setCookie(){
+                    var email = document.getElementById("email").value;
+                    var pwd = document.getElementById("pwd").value;
+                    document.cookie = "email="+email;
+                    document.cookie = "pwd="+pwd;
+                }
+            </script>
         </form>
     </div>
     <ul>

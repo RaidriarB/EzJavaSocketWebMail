@@ -111,6 +111,7 @@ public class SMTPClient {
             System.out.println(reader.readLine());
 
             //mail from rcpt to
+            //writter.println(SMTPFunction.getMailFrom("123@qq.com"));
             writter.println(SMTPFunction.getMailFrom(srcmail));
             System.out.println(reader.readLine());
             writter.println(SMTPFunction.getRcptTo(dstmail));
@@ -121,6 +122,7 @@ public class SMTPClient {
             System.out.println(reader.readLine());
             writter.println("subject:"+subject);
             writter.println("from:" + srcmail);
+            //writter.println("from:" + "951775489@qq.com");
             writter.println("to:" + dstmail);
             writter.println("Content-Type: text/plain;charset=\"UTF-8\"");//如果发送正文必须加这个，而且下面要有一个空行
             writter.println("");

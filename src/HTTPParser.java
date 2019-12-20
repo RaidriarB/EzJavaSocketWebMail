@@ -147,7 +147,12 @@ public class HTTPParser {
         for(String cookie : cookies){
             cookie = cookie.trim();
             String cKey = URLDecoder.decode(cookie.split("=")[0], StandardCharsets.UTF_8);
-            String cValue = URLDecoder.decode(cookie.split("=")[1], StandardCharsets.UTF_8);
+            String cValue;
+            try{
+                cValue = URLDecoder.decode(cookie.split("=")[1], StandardCharsets.UTF_8);
+            }catch (ArrayIndexOutOfBoundsException e){
+                cValue = "";
+            }
             this.httpObject.addCookie(cKey, cValue);
         }
     }
